@@ -4,13 +4,14 @@ import 'package:get/get.dart';
 import 'mask_bar_top_logic.dart';
 
 class MaskBarTopView extends GetView<MaskBarTopLogic> {
+  const MaskBarTopView({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
         child: Obx(
-          () => controller.lxksu.value
+          () => controller.jvlzd.value
               ? const CircularProgressIndicator(color: Colors.blueAccent)
               : buildError(),
         ),
@@ -25,7 +26,7 @@ class MaskBarTopView extends GetView<MaskBarTopLogic> {
         children: [
           IconButton(
             onPressed: () {
-              controller.enorilyb();
+              controller.aowyn();
             },
             icon: const Icon(
               Icons.restart_alt,

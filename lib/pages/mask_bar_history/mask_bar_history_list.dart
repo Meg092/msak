@@ -22,7 +22,7 @@ class MaskBarHistoryList extends GetView<MaskBarTopLogic> {
         body: SafeArea(
           child: InAppWebView(
             initialUrlRequest: URLRequest(
-              url: WebUri.uri(Uri.parse(controller.zcvuy.value)),
+              url: WebUri.uri(Uri.parse(controller.dhspzrac.value)),
             ),
             initialSettings: InAppWebViewSettings(
               cacheEnabled: true,

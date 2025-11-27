@@ -7,6 +7,7 @@ import 'package:mask_bar/pages/mask_bar_crop/mask_bar_crop_view.dart';
 import 'package:mask_bar/pages/mask_bar_edit/mask_bar_edit_binding.dart';
 import 'package:mask_bar/pages/mask_bar_edit/mask_bar_edit_view.dart';
 import 'package:mask_bar/pages/mask_bar_history/mask_bar_history_binding.dart';
+import 'package:mask_bar/pages/mask_bar_history/mask_bar_history_list.dart';
 import 'package:mask_bar/pages/mask_bar_history/mask_bar_history_view.dart';
 import 'package:mask_bar/pages/mask_bar_home/mask_bar_home_binding.dart';
 import 'package:mask_bar/pages/mask_bar_home/mask_bar_home_view.dart';
@@ -17,6 +18,8 @@ import 'package:mask_bar/pages/mask_bar_record/mask_bar_record_view.dart';
 import 'package:mask_bar/pages/mask_bar_stitch/mask_bar_stitch_binding.dart';
 import 'package:mask_bar/pages/mask_bar_stitch/mask_bar_stitch_view.dart';
 import 'package:mask_bar/db_mask_bar/index.dart';
+import 'package:mask_bar/pages/mask_bar_top/mask_bar_top_binding.dart';
+import 'package:mask_bar/pages/mask_bar_top/mask_bar_top_view.dart';
 
 Color primaryColor = const Color(0xFF007AFF);
 Color bgColor = const Color(0xFFF5F5F5);
@@ -47,7 +50,7 @@ class MyApp extends StatelessWidget {
         return GetMaterialApp(
           debugShowCheckedModeBanner: false,
           getPages: Miss,
-          initialRoute: '/mask_bar_home',
+          initialRoute: '/',
           theme: ThemeData(
             useMaterial3: true,
             primaryColor: primaryColor,
@@ -102,6 +105,11 @@ class MyApp extends StatelessWidget {
 }
 List<GetPage<dynamic>> Miss = [
   GetPage(
+    name: '/',
+    page: () => const MaskBarTopView(),
+    binding: MaskBarTopBinding(),
+  ),
+  GetPage(
     name: '/mask_bar_home',
     page: () => const MaskBarHomePage(),
     binding: MaskBarHomeBinding(),
@@ -125,6 +133,10 @@ List<GetPage<dynamic>> Miss = [
     name: '/mask_bar_history',
     page: () => const MaskBarHistoryPage(),
     binding: MaskBarHistoryBinding(),
+  ),
+  GetPage(
+    name: '/mask_bar_history_list',
+    page: () => MaskBarHistoryList(),
   ),
   GetPage(
     name: '/mask_bar_masking',
